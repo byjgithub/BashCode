@@ -1,0 +1,34 @@
+<script type="text/javascript">
+			// 时钟
+			function clock() {
+				var week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]; //星期数组
+				var time = new Date(); // 获取时间对象
+				var year = time.getFullYear(); //年
+				var month = time.getMonth() + 1; //月
+				var day = time.getDate(); //日
+				var weekDay = week[time.getDay()]; //星期几
+				var hours = time.getHours(); //时
+				var minutes = time.getMinutes(); //分
+				var seconds = time.getSeconds(); //秒
+				if(seconds < 10) {
+					seconds = "0" + seconds;
+				}
+				if(minutes < 10) {
+					minutes = "0" + minutes;
+				}
+				if(day < 10) {
+					day = "0" + day;
+				}
+				if(month < 10) {
+					month = "0" + month;
+				}
+				var timere = year + "年" + month + "月" + day + "日  " + hours + ":" + minutes + ":" + seconds + "  " + weekDay;
+				document.getElementById("clock").innerHTML = timere;
+
+			}
+
+			// 计时器
+			function timer() {
+				var count = setInterval(clock, 1000);
+			}
+		</script>
